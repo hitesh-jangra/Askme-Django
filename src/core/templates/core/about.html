@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %} About | {{ block.super }}{% endblock title %}
+
+{% block content %}
+
+<h1>About US</h1>
+<hr>
+<p>Face detection is a broader term than face recognition.
+    Face detection just means that a system is able to identify that there is a human face present in an image or video.
+    Face detection has several applications, only one of which is facial recognition.
+    Face detection can also be used to auto focus cameras. 
+    And it can be used to count how many people have entered a particular area.
+    It can even be used for marketing purposes.
+    For example, advertisements can be displayed the moment a face is recognized.</p>
+<p>While the process is somewhat complex, face detection algorithms often begin by searching for human eyes.
+   Eyes constitute what is known as a valley region and are one of the easiest features to detect.
+Once eyes are detected, the algorithm might then attempt to detect facial regions including eyebrows, the mouth, nose, nostrils and the iris. 
+Once the algorithm surmises that it has detected a facial region, it can then apply additional tests to validate whether it has, in fact, detected a face.</p>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends "core/base.html" %}
+{% block content %}
+<hr>
+<a class="btn btn-success" href="{% url 'addblog' %}">Add your blog!!</a>
+<hr>
+<h1>All Blogs</h1>
+<hr>
+{% for b in blog %}
+<div class="list-group">
+  <div class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h4 class="mb-1"><b><a href="{{b.get_absolute_url}}" >{{ b.title }}</a></b>
+      <small>Asked {{ b.updated|timesince }} ago By <b>
+      <a href="{{b.user.get_absolute_url}}" >{{ b.user.username }}</a>
+      </b></small></h4>
+      <small><b>Category:</b> <a href="{{b.category.get_absolute_url}}" >{{ b.category }}</a></small>
+    </div>
+    <p class="mb-1">{{ question.details|linebreaks|truncatechars:120 }}</p>
+
+  </div>
+</div>
+{% endfor %}
+
+{% endblock content %}
